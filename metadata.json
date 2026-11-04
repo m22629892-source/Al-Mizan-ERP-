@@ -1,0 +1,8 @@
+{
+  "name": "نظام الميزان المحاسبي المتكامل - Al-Mizan ERP",
+  "description": "نظام محاسبي وتجاري متكامل للشركات في مصر يدعم شجرة الحسابات، قيود اليومية، الفواتير والمخازن والضرائب المصرية والتقارير المالية الكاملة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

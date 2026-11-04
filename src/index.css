@@ -1,0 +1,346 @@
+@import "tailwindcss";
+
+@layer base {
+  :root,
+  [data-theme="classic"] {
+    --app-bg: #f8fafc;
+    --app-text: #0f172a;
+    --surface-bg: #ffffff;
+    --surface-muted: #f1f5f9;
+    --surface-card: #ffffff;
+    --sidebar-bg: #0f172a;
+    --sidebar-border: #1e293b;
+    --sidebar-text: #cbd5e1;
+    --sidebar-active-bg: #059669;
+    --sidebar-active-text: #ffffff;
+    --header-bg: #0f172a;
+    --header-border: #1e293b;
+    --border-main: #e2e8f0;
+    --border-subtle: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --brand-primary: #059669;
+    --brand-primary-hover: #047857;
+    --brand-accent: #d97706;
+    --brand-accent-hover: #b45309;
+    --table-header-bg: #f8fafc;
+    --table-header-text: #475569;
+    --table-row-hover: #f1f5f9;
+    --table-row-alt: #fafafa;
+    --badge-gold-bg: #fef3c7;
+    --badge-gold-text: #92400e;
+    --badge-gold-border: #fde68a;
+    --modal-backdrop: rgba(15, 23, 42, 0.65);
+  }
+
+  [data-theme="emerald"] {
+    --app-bg: #f0fdf4;
+    --app-text: #064e3b;
+    --surface-bg: #ffffff;
+    --surface-muted: #ecfdf5;
+    --surface-card: #ffffff;
+    --sidebar-bg: #064e3b;
+    --sidebar-border: #047857;
+    --sidebar-text: #d1fae5;
+    --sidebar-active-bg: #059669;
+    --sidebar-active-text: #ffffff;
+    --header-bg: #064e3b;
+    --header-border: #047857;
+    --border-main: #d1fae5;
+    --border-subtle: #ecfdf5;
+    --text-primary: #064e3b;
+    --text-secondary: #047857;
+    --text-muted: #059669;
+    --brand-primary: #059669;
+    --brand-primary-hover: #047857;
+    --brand-accent: #10b981;
+    --brand-accent-hover: #059669;
+    --table-header-bg: #ecfdf5;
+    --table-header-text: #065f46;
+    --table-row-hover: #f0fdf4;
+    --table-row-alt: #f7fee7;
+    --badge-gold-bg: #ecfdf5;
+    --badge-gold-text: #065f46;
+    --badge-gold-border: #a7f3d0;
+    --modal-backdrop: rgba(6, 78, 59, 0.7);
+  }
+
+  [data-theme="graphite"] {
+    --app-bg: #0c0e14;
+    --app-text: #f8fafc;
+    --surface-bg: #141721;
+    --surface-muted: #1c202d;
+    --surface-card: #181b26;
+    --sidebar-bg: #10131a;
+    --sidebar-border: #222736;
+    --sidebar-text: #94a3b8;
+    --sidebar-active-bg: #0891b2;
+    --sidebar-active-text: #ffffff;
+    --header-bg: #10131a;
+    --header-border: #222736;
+    --border-main: #262c3d;
+    --border-subtle: #1c202d;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --brand-primary: #06b6d4;
+    --brand-primary-hover: #0891b2;
+    --brand-accent: #14b8a6;
+    --brand-accent-hover: #0d9488;
+    --table-header-bg: #1b1f2b;
+    --table-header-text: #cbd5e1;
+    --table-row-hover: #1e2330;
+    --table-row-alt: #161922;
+    --badge-gold-bg: #1e2638;
+    --badge-gold-text: #38bdf8;
+    --badge-gold-border: #0369a1;
+    --modal-backdrop: rgba(0, 0, 0, 0.82);
+  }
+
+  [data-theme="accountant"] {
+    --app-bg: #f1f5f9;
+    --app-text: #0f172a;
+    --surface-bg: #ffffff;
+    --surface-muted: #e2e8f0;
+    --surface-card: #ffffff;
+    --sidebar-bg: #1e293b;
+    --sidebar-border: #334155;
+    --sidebar-text: #cbd5e1;
+    --sidebar-active-bg: #2563eb;
+    --sidebar-active-text: #ffffff;
+    --header-bg: #1e293b;
+    --header-border: #334155;
+    --border-main: #cbd5e1;
+    --border-subtle: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --brand-primary: #2563eb;
+    --brand-primary-hover: #1d4ed8;
+    --brand-accent: #3b82f6;
+    --brand-accent-hover: #2563eb;
+    --table-header-bg: #e2e8f0;
+    --table-header-text: #1e293b;
+    --table-row-hover: #f8fafc;
+    --table-row-alt: #f1f5f9;
+    --badge-gold-bg: #dbeafe;
+    --badge-gold-text: #1e40af;
+    --badge-gold-border: #bfdbfe;
+    --modal-backdrop: rgba(30, 41, 59, 0.7);
+  }
+
+  body {
+    font-family: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--app-text);
+    background-color: var(--app-bg);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .font-mono-numbers {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* =========================================================================
+   Theme Overrides & Component Mapping
+   ========================================================================= */
+
+/* Dark Graphite Specific High-Contrast Overrides */
+[data-theme="graphite"] .bg-white {
+  background-color: var(--surface-card) !important;
+  color: var(--text-primary);
+}
+
+[data-theme="graphite"] .bg-slate-50,
+[data-theme="graphite"] .bg-slate-100 {
+  background-color: var(--app-bg) !important;
+}
+
+[data-theme="graphite"] .bg-slate-200 {
+  background-color: var(--surface-muted) !important;
+}
+
+[data-theme="graphite"] .text-slate-800,
+[data-theme="graphite"] .text-slate-900 {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="graphite"] .text-slate-700,
+[data-theme="graphite"] .text-slate-600 {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="graphite"] .text-slate-500,
+[data-theme="graphite"] .text-slate-400 {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="graphite"] .border-slate-100,
+[data-theme="graphite"] .border-slate-200,
+[data-theme="graphite"] .border-slate-300 {
+  border-color: var(--border-main) !important;
+}
+
+[data-theme="graphite"] input:not([type="checkbox"]):not([type="radio"]),
+[data-theme="graphite"] select,
+[data-theme="graphite"] textarea {
+  background-color: #171b26 !important;
+  color: #f8fafc !important;
+  border-color: #2a3245 !important;
+}
+
+[data-theme="graphite"] input:focus,
+[data-theme="graphite"] select:focus,
+[data-theme="graphite"] textarea:focus {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2) !important;
+}
+
+[data-theme="graphite"] table thead tr {
+  background-color: var(--table-header-bg) !important;
+}
+
+[data-theme="graphite"] table tbody tr:hover {
+  background-color: var(--table-row-hover) !important;
+}
+
+/* Emerald Specific Highlights */
+[data-theme="emerald"] .bg-emerald-600 {
+  background-color: #059669 !important;
+}
+
+[data-theme="emerald"] .bg-emerald-700 {
+  background-color: #047857 !important;
+}
+
+[data-theme="emerald"] .border-slate-200 {
+  border-color: #d1fae5 !important;
+}
+
+/* Accountant Specific Highlights */
+[data-theme="accountant"] .bg-emerald-600 {
+  background-color: #2563eb !important;
+}
+
+[data-theme="accountant"] .bg-emerald-700 {
+  background-color: #1d4ed8 !important;
+}
+
+[data-theme="accountant"] .text-emerald-600 {
+  color: #2563eb !important;
+}
+
+[data-theme="accountant"] .border-emerald-600 {
+  border-color: #2563eb !important;
+}
+
+[data-theme="accountant"] table {
+  border-collapse: collapse;
+}
+
+[data-theme="accountant"] table th,
+[data-theme="accountant"] table td {
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* =========================================================================
+   Display Density Modes (عرض مريح / عرض مضغوط)
+   ========================================================================= */
+
+[data-density="compact"] table th {
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+}
+
+[data-density="compact"] table td {
+  padding-top: 0.35rem !important;
+  padding-bottom: 0.35rem !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.15rem !important;
+}
+
+[data-density="compact"] .density-metric-card {
+  padding: 0.75rem !important;
+}
+
+[data-density="compact"] .density-metric-card h3 {
+  font-size: 0.75rem !important;
+}
+
+[data-density="compact"] .density-metric-card .text-xl,
+[data-density="compact"] .density-metric-card .text-2xl {
+  font-size: 1.125rem !important;
+}
+
+/* =========================================================================
+   Print Strict High-Contrast Standard (White Paper, Dark Ink)
+   ========================================================================= */
+
+@media print {
+  *,
+  [data-theme="classic"],
+  [data-theme="emerald"],
+  [data-theme="graphite"],
+  [data-theme="accountant"] {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-invoice-page {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #94a3b8 !important;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+  }
+}
+
+/* =========================================================================
+   Reduced Motion Accessibility
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

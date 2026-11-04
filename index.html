@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نظام الميزان المحاسبي المتكامل - Al-Mizan ERP</title>
+    <meta name="description" content="نظام محاسبي وتجاري متكامل للشركات في مصر يدعم شجرة الحسابات، قيود اليومية، الفواتير والمخازن والضرائب المصرية والتقارير المالية الكاملة." />
+    <meta property="og:title" content="نظام الميزان المحاسبي المتكامل - Al-Mizan ERP" />
+    <meta property="og:description" content="نظام محاسبي وتجاري متكامل للشركات في مصر يدعم شجرة الحسابات، قيود اليومية، الفواتير والمخازن والضرائب المصرية والتقارير المالية الكاملة." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        try {
+          var activeTheme = localStorage.getItem('almizan_active_theme') || 'classic';
+          var activeDensity = localStorage.getItem('almizan_active_density') || 'comfortable';
+          document.documentElement.setAttribute('data-theme', activeTheme);
+          document.documentElement.setAttribute('data-density', activeDensity);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
